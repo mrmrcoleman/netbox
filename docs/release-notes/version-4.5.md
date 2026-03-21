@@ -1,5 +1,74 @@
 # NetBox v4.5
 
+## v4.5.5 (2026-03-17)
+
+### Enhancements
+
+* [#21114](https://github.com/netbox-community/netbox/issues/21114) - Support path exclusions for data source synchronization
+* [#21578](https://github.com/netbox-community/netbox/issues/21578) - Support identifying scope object by name or slug when bulk importing scoped objects
+
+### Performance Improvements
+
+* [#21330](https://github.com/netbox-community/netbox/issues/21330) - Optimize the assignment of tags when saving objects
+* [#21402](https://github.com/netbox-community/netbox/issues/21402) - Avoid excessive database queries when rendering unnamed devices via the REST API
+* [#21611](https://github.com/netbox-community/netbox/issues/21611) - Replace inefficient calls to `.count()` with `.exists()`
+
+### Bug Fixes
+
+* [#19867](https://github.com/netbox-community/netbox/issues/19867) - Preserve the "per page" pagination setting when returning from object edit forms
+* [#20077](https://github.com/netbox-community/netbox/issues/20077) - Fix form field focus bug in Microsoft Edge
+* [#20385](https://github.com/netbox-community/netbox/issues/20385) - Enforce `MAX_PAGE_SIZE` limit for GraphQL API requests
+* [#20468](https://github.com/netbox-community/netbox/issues/20468) - Fix range-based filter lookups for integer fields in GraphQL API
+* [#20915](https://github.com/netbox-community/netbox/issues/20915) - Restore user language preference after login via social authentication
+* [#20934](https://github.com/netbox-community/netbox/issues/20934) - Fix dark mode flicker on page load
+* [#21012](https://github.com/netbox-community/netbox/issues/21012) - Add pagination for VLAN table on interface view to prevent silent truncation at 100 entries
+* [#21380](https://github.com/netbox-community/netbox/issues/21380) - Fix display of the background tasks table on mobile
+* [#21440](https://github.com/netbox-community/netbox/issues/21440) - Avoid erroneously clearing primary/OOB IP assignments during bulk import/update
+* [#21468](https://github.com/netbox-community/netbox/issues/21468) - Preserve safe custom HTTP headers when copying requests for background job processing
+* [#21486](https://github.com/netbox-community/netbox/issues/21486) - Fix `AttributeError` exception caused by missing `COOKIES` attribute on `NetBoxFakeRequest`
+* [#21512](https://github.com/netbox-community/netbox/issues/21512) - Fix GraphQL filter field name mismatch for device component types (e.g. `console_ports`)
+* [#21531](https://github.com/netbox-community/netbox/issues/21531) - Fix search functionality for location when combined with other filters
+* [#21556](https://github.com/netbox-community/netbox/issues/21556) - Avoid clearing the platform field when changing device type in the device edit form
+* [#21579](https://github.com/netbox-community/netbox/issues/21579) - Hide the script "Add" button for users lacking the required permission
+* [#21580](https://github.com/netbox-community/netbox/issues/21580) - Hide the virtual machine "Add components" dropdown for users lacking change permission
+* [#21586](https://github.com/netbox-community/netbox/issues/21586) - Fix broken "Add child group" link in site group view (was pointing to the region endpoint)
+* [#21618](https://github.com/netbox-community/netbox/issues/21618) - Fix cable termination points being lost when bulk-editing the cable profile
+* [#21651](https://github.com/netbox-community/netbox/issues/21651) - Disable sorting by the `is_primary` column in the MAC address list view
+* [#21653](https://github.com/netbox-community/netbox/issues/21653) - Fix profile-based cable tracing when a single origin carries multiple positions
+* [#21673](https://github.com/netbox-community/netbox/issues/21673) - Fix display of primary IP address with associated NAT IP on virtual machine view
+* [#21686](https://github.com/netbox-community/netbox/issues/21686) - Clean up cached circuit attributes when reassigning a circuit termination
+
+---
+
+## v4.5.4 (2026-03-03)
+
+### Enhancements
+
+* [#21369](https://github.com/netbox-community/netbox/issues/21369) - Support lazy-loading of image attachments
+* [#21385](https://github.com/netbox-community/netbox/issues/21385) - Add contact assignment support for virtual circuits
+* [#21394](https://github.com/netbox-community/netbox/issues/21394) - Add 10GBASE-CU and 40GBASE-SR4 BiDi interface types
+* [#21477](https://github.com/netbox-community/netbox/issues/21477) - Extend GraphQL API filters for cables
+
+### Performance Improvements
+
+* [#21456](https://github.com/netbox-community/netbox/issues/21456) - Improve performance of config context resolution via GraphQL API
+* [#21459](https://github.com/netbox-community/netbox/issues/21459) - Avoid prefetching data for hidden table columns
+
+### Bug Fixes
+
+* [#20490](https://github.com/netbox-community/netbox/issues/20490) - Restrict visibility of scripts in list view to users with view permission
+* [#20911](https://github.com/netbox-community/netbox/issues/20911) - Sort module bay options alphabetically when installing a module
+* [#21347](https://github.com/netbox-community/netbox/issues/21347) - The allocation of IPv6 addresses from a non-pool prefix should start at one, not zero
+* [#21429](https://github.com/netbox-community/netbox/issues/21429) - Termination type should persist when employing "create & add another" workflow for cables
+* [#21478](https://github.com/netbox-community/netbox/issues/21478) - Fix GraphQL union type resolution for connected console ports
+* [#21481](https://github.com/netbox-community/netbox/issues/21481) - Fix display of facility ID on rack view
+* [#21518](https://github.com/netbox-community/netbox/issues/21518) - Fix decimal custom field displaying as unset when value is zero
+* [#21524](https://github.com/netbox-community/netbox/issues/21524) - Avoid `IndexError` exception when encountering stale cable paths
+* [#21527](https://github.com/netbox-community/netbox/issues/21527) - Fix display of primary IP address with associated NAT IP on device view
+* [#21550](https://github.com/netbox-community/netbox/issues/21550) - Ensure pre-change snapshots are recorded for related objects
+
+---
+
 ## v4.5.3 (2026-02-17)
 
 ### Enhancements

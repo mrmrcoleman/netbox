@@ -47,7 +47,8 @@ django-rich
 
 # Django integration for RQ (Reqis queuing)
 # https://github.com/rq/django-rq/blob/master/CHANGELOG.md
-django-rq
+# See https://github.com/netbox-community/netbox/issues/21696
+django-rq<4.0
 
 # Provides a variety of storage backends
 # https://github.com/jschneier/django-storages/blob/master/CHANGELOG.rst
@@ -97,6 +98,10 @@ jsonschema
 # Simple markup language for rendering HTML
 # https://python-markdown.github.io/changelog/
 Markdown
+
+# MkDocs
+# https://github.com/mkdocs/mkdocs/releases
+mkdocs<2.0
 
 # MkDocs Material theme (for documentation build)
 # https://squidfunk.github.io/mkdocs-material/changelog/
@@ -157,8 +162,7 @@ strawberry-graphql
 
 # Strawberry GraphQL Django extension
 # https://github.com/strawberry-graphql/strawberry-django/releases
-# Blocked by #21450
-strawberry-graphql-django==0.75.0
+strawberry-graphql-django
 
 # SVG image rendering (used for rack elevations)
 # https://github.com/mozman/svgwrite/blob/master/NEWS.rst
