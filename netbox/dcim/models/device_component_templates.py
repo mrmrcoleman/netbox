@@ -191,9 +191,6 @@ class ModularComponentTemplateModel(ComponentTemplateModel):
     def resolve_label(self, module):
         return self._resolve_module_placeholder(self.label, module)
 
-    def resolve_position(self, module):
-        return self._resolve_module_placeholder(self.position, module)
-
 
 class ConsolePortTemplate(ModularComponentTemplateModel):
     """
@@ -721,6 +718,9 @@ class ModuleBayTemplate(ModularComponentTemplateModel):
     class Meta(ModularComponentTemplateModel.Meta):
         verbose_name = _('module bay template')
         verbose_name_plural = _('module bay templates')
+
+    def resolve_position(self, module):
+        return self._resolve_module_placeholder(self.position, module)
 
     def instantiate(self, **kwargs):
         return self.component_model(
